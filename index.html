@@ -4,8 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Manager</title>
+    <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-    
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="add-students.html">Add Student</a>
+        </nav>
+
+    <main>
+        <h1>Student Manager</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Class</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>10A</td>
+                    <td>Male</td>
+                    <td>15</td>
+                    <td>
+                        <a href="edit-student.html?name=Johm%20Doe&class=10A&gender=Male&age=15"><button type="button">Edit</button></a>
+                        <button type="button">Delete</button>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sarah Smith</td>
+                    <td>10B</td>
+                    <td>Female</td>
+                    <td>15</td>
+                    <td>
+                        <a href="edit-student.html?name=Sarah%20Smith&class=10B&gender=Female&age=15"><button type="button">Edit</button></a>
+                        <button type="button">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Michael Johnson</td>
+                    <td>10A</td>
+                    <td>Male</td>
+                    <td>16</td>
+                    <td>
+                        <a href="edit-student.html?name=Michael%20Johnson&class=10A&gender=Male&age=16"><button type="button">Edit</button></a>
+                        <button type="button">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Emma Wilson</td>
+                    <td>9C</td>
+                    <td>Female</td>
+                    <td>14</td>
+                    <td>
+                        <a href="edit-student.html?name=Emma%20Wilson&class=9C&gender=Female&age=14"><button type="button">Edit</button></a>
+                        <button type="button">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        function editStudent(id, name, className, gender, age) {
+            // Pass student data to edit page via URL parameters
+            const params = new URLSearchParams({
+                id: id,
+                name: name,
+                class: className,
+                gender: gender,
+                age: age
+            });
+            window.location.href = `edit-student.html?${params.toString()}`;
+        }
+
+        function deleteStudent(id) {
+            if (confirm('Are you sure you want to delete this student?')) {
+                // Delete functionality can be implemented here
+                alert('Student with ID ' + id + ' deleted.');
+                location.reload();
+            }
+        }
+    </script>
 </body>
 </html>
