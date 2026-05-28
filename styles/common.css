@@ -1,0 +1,39 @@
+ @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap');
+ 
+ * {
+    margin: 0;
+    padding: 0;box-sizing: border-box;
+ }
+
+ a {
+    text-decoration: none;
+     color: inherit;
+ }
+ 
+ body {
+    font-family: "outfit, sans-serif";
+ }
+
+ nav {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    height: 50px;
+    background-color: #EDE9E6;
+     margin-bottom: 20px;
+
+}
+nav a {
+    display: flex;
+    align-items: center;
+    padding-inline: 20px;
+    color: #462C7D;
+    height: 100%; 
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+nav a:hover {
+    background-color: #D552A3;
+    color: white;
+}
